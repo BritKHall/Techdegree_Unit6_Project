@@ -1,9 +1,9 @@
 // Variables-----------------------------------------------------------------
 
-const overlay = document.querySelector('#overlay');
+const overlay = document.getElementById('overlay');
 const resetBtn = document.querySelector('.btn__reset');
-const keyboard = getElementById("qwerty");
-const phrash = getElementById("phrash");
+const keyboard = document.getElementById('qwerty');
+const phrash = document.getElementById("phrash");
 let missed = 0;
 
 const phrases = [
@@ -15,45 +15,56 @@ const phrases = [
     "brave is not the absence of fear",
     "hope is a waking dream",
     "never stop until you are proud"
-  ];
+  ]
 
 // Overlay Visability-----------------------------------------------------------------
 
 
-// Set overlay
 function setOverlay(visibility) {
-    overlay.style.visibility = visibility;
-  }
-  
-  // Show overlay
-  function showOverlay(name, message) {
-    let title = document.querySelector('.title');
-    let btn = document.querySelector('.btn__reset');
-    setOverlay('visible');
-    overlay.className = name;
-    title.textContent = message;
-    btn.textContent = 'Play again';
-  }
-  
+  overlay.style.visibility = visibility;
+}
 
-// Get Phrase-----------------------------------------------------------------
+resetBtn.addEventListener('click', () => {
+  setOverlay('hidden');
+});
+
+
+// Phrase functions-----------------------------------------------------------------
 
 
 function getRandomPhraseAsArray(arr){
-    //do stuff to any arr that is passed in 
+  const randomize = Math.floor(Math.random() * phrases.length);
+  const randomPhrase = arr[randomize].split(" ");
 } 
 
 getRandomPhraseAsArray(phrases);
 
 
-//Set Display -----------------------------------------------------------------
+
+
+
 
 function addPhraseToDisplay(arr){
-    // do stuff any arr that is passed in, and add to `#phrase ul`
+
+
+
 }
 
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhrasetoDisplay(phraseArray); 
 
 
-// Check Letter-----------------------------------------------------------------
+// keyboard functions-----------------------------------------------------------------
+
+function checkLetters() {
+
+
+}
+
+
+// Results -----------------------------------------------------------------
+
+function checkWin() {
+
+  
+}
