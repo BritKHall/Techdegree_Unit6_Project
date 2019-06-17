@@ -6,7 +6,7 @@ const keyboard = document.getElementById('qwerty');
 const phrase = document.getElementById("phrase");
 const ul = document.querySelector ('ul')
 let missed = 0;
-
+let letters = document.querySelectorAll('.letter');
 
 
 // Overlay Functions-----------------------------------------------------------------
@@ -23,11 +23,10 @@ mainBtn.addEventListener('click', () => {
 
 function showOverlay(name, message) {
   let title = document.querySelector('.title');
-  let btn = document.querySelector('.btn__reset');
   setOverlay('visible');
   overlay.className = name;
   title.textContent = message;
-  btn.textContent = 'Try again';
+  mainBtn.textContent = 'Try again';
 }
 
 // Phrase functions-----------------------------------------------------------------
@@ -78,7 +77,7 @@ function checkLetter(btn) {
     let letter = letters[i].textContent;
     if (letter === btnLetter) {
       letters[i].classList.add('show');
-      letters[i].classList.add('border-spin');
+      letters[i].classList.add('border-fade');
       if (match === null) {
         match = letter;
       }
